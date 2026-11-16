@@ -1,0 +1,133 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE 54 Days Planner | NEXVIAN</title>
+
+    <link rel="stylesheet" href="jee-planner.css">
+</head>
+<body>
+
+<header class="planner-header">
+    <a href="index.html" class="logo">NEXVIAN</a>
+    <span>JEE MAIN 2027</span>
+    <a href="index.html" class="back-btn">← Home</a>
+</header>
+
+<main class="planner-container">
+
+    <section class="welcome-section">
+        <p class="tagline">YOUR 54 DAYS CHALLENGE</p>
+        <h1>JEE Main Study Planner</h1>
+        <p>Plan your study, save your materials and track your progress.</p>
+    </section>
+
+    <section class="stats-container">
+
+        <div class="stat-card">
+            <h2 id="totalDays">54</h2>
+            <p>Total Days</p>
+        </div>
+
+        <div class="stat-card">
+            <h2 id="completedDays">0</h2>
+            <p>Completed Days</p>
+        </div>
+
+        <div class="stat-card">
+            <h2 id="progressPercent">0%</h2>
+            <p>Overall Progress</p>
+        </div>
+
+    </section>
+
+    <section class="progress-section">
+        <h3>Preparation Progress</h3>
+        <div class="progress-bar">
+            <div id="progressFill"></div>
+        </div>
+    </section>
+
+<section class="backup-section">
+    <h2>My Planner Backup</h2>
+    <p>Save your study progress safely.</p>
+
+    <div class="backup-buttons">
+        <button onclick="exportPlanner()">
+            Download Backup
+        </button>
+
+        <label for="restoreFile" class="restore-btn">
+            Restore Backup
+        </label>
+
+        <input
+            type="file"
+            id="restoreFile"
+            accept=".json"
+            onchange="importPlanner(event)"
+            hidden
+        >
+    </div>
+</section>
+
+<section class="subject-progress">
+    <h2>Subject Progress</h2>
+
+    <div class="subject-progress-grid">
+
+        <div class="subject-box">
+            <h3>Physics</h3>
+            <p id="physicsProgress">0 / 54</p>
+            <div class="subject-bar">
+                <div id="physicsFill"></div>
+            </div>
+        </div>
+
+        <div class="subject-box">
+            <h3>Chemistry</h3>
+            <p id="chemistryProgress">0 / 54</p>
+            <div class="subject-bar">
+                <div id="chemistryFill"></div>
+            </div>
+        </div>
+
+        <div class="subject-box">
+            <h3>Mathematics</h3>
+            <p id="mathsProgress">0 / 54</p>
+            <div class="subject-bar">
+                <div id="mathsFill"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <section class="filter-section">
+        <h2>Your Study Days</h2>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="All">All Days</button>
+            <button class="filter-btn" data-filter="Physics">Physics</button>
+            <button class="filter-btn" data-filter="Chemistry">Chemistry</button>
+            <button class="filter-btn" data-filter="Mathematics">Mathematics</button>
+        </div>
+    </section>
+
+    <section id="daysContainer" class="days-container">
+        <!-- 54 Day Cards will appear here -->
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 NEXVIAN | JEE Main Preparation</p>
+</footer>
+
+<script src="jee-planner.js"></script>
+
+</body>
+</html>

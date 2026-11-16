@@ -1,0 +1,795 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexvian</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #090D1D;
+    color: white;
+}
+
+/* NAVBAR */
+
+.navbar {
+    width: 100%;
+    min-height: 80px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(13, 18, 40, 0.95);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO */
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: white;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #A78BFA;
+}
+
+/* NAV LINKS */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #CBD5E1;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #A78BFA;
+}
+
+/* BUTTONS */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid #39415D;
+    border-radius: 10px;
+    padding: 9px 13px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.login-btn {
+    background: linear-gradient(135deg, #8B5CF6, #6366F1);
+    color: white;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+    transform: translateY(-2px);
+}
+
+/* MOBILE MENU */
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #10162D;
+        flex-direction: column;
+        padding: 25px;
+        gap: 22px;
+        border-bottom: 1px solid #39415D;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-actions .login-btn {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="#" class="logo">
+        Nex<span>Vian</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#technology">Technology</a></li>
+        <li><a href="#knowledge">Knowledge</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+        <button class="search-btn" aria-label="Search">⌕</button>
+        <button class="login-btn">Login / Sign Up</button>
+
+        <button class="menu-btn" id="menuBtn"
+        aria-label="Toggle navigation"
+        aria-expanded="false">☰</button>
+    </div>
+
+</nav>
+
+
+
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="hero-tag">
+            ✦ THE FUTURE OF LEARNING
+        </span>
+
+        <h1>
+            Unlock Your
+            <span>Infinite Potential.</span>
+        </h1>
+
+        <p class="hero-description">
+            Learn anything. Explore everything.
+            Build your future with NEXVIAN.
+        </p>
+
+        <!-- SEARCH BAR -->
+
+        <div class="hero-search">
+            <span>⌕</span>
+            <input type="text"
+            id="heroSearch"
+            placeholder="What do you want to learn today?">
+
+            <button onclick="searchLearning()">Search</button>
+        </div>
+        <p id="searchResults"></p>
+        
+        
+        
+        <!-- BUTTONS -->
+
+        <div class="hero-buttons">
+
+            <a href="#categories" class="primary-btn">
+                Explore Now →
+            </a>
+
+            <a href="#education" class="secondary-btn">
+                Start Learning
+            </a>
+
+        </div>
+
+
+
+        <!-- FEATURES -->
+
+        <div class="hero-features">
+
+            <div>
+                <h3>Learn</h3>
+                <p>New Skills</p>
+            </div>
+
+            <div>
+                <h3>Explore</h3>
+                <p>New Ideas</p>
+            </div>
+
+            <div>
+                <h3>Grow</h3>
+                <p>Your Future</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- RIGHT SIDE VISUAL -->
+
+    <div class="hero-visual">
+
+        <div class="glow-circle"></div>
+
+        <div class="hero-icon">
+            <span>📚</span>
+        </div>
+
+        <div class="floating-card card-one">
+            ✦ Knowledge
+        </div>
+
+        <div class="floating-card card-two">
+            🚀 Innovation
+        </div>
+
+        <div class="floating-card card-three">
+            💡 Creativity
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("show");
+    menuBtn.setAttribute("aria-expanded", isOpen);
+    menuBtn.textContent = isOpen ? "✕" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        menuBtn.textContent = "☰";
+        menuBtn.setAttribute("aria-expanded", "false");
+    });
+});
+</script>
+<script src="script.js"></script>
+
+
+
+
+
+
+<!-- EXPLORE CATEGORIES SECTION -->
+
+<section class="categories" id="categories">
+
+    <div class="section-heading">
+
+        <span class="section-tag">
+            DISCOVER YOUR INTEREST
+        </span>
+
+        <h2>
+            Explore <span>Categories</span>
+        </h2>
+
+        <p>
+            Choose your interest and start
+            your learning journey.
+        </p>
+
+    </div>
+
+    <div class="category-container">
+
+        <a href="#science" class="category-card science">
+            <div class="category-icon">⚛️</div>
+            <h3>Science</h3>
+            <p>Discover the universe</p>
+            <span>Explore →</span>
+        </a>
+
+        <a href="#mathematics" class="category-card mathematics">
+            <div class="category-icon">📐</div>
+            <h3>Mathematics</h3>
+            <p>Master the numbers</p>
+            <span>Explore →</span>
+        </a>
+
+        <a href="#history" class="category-card history">
+            <div class="category-icon">🏛️</div>
+            <h3>History</h3>
+            <p>Explore the past</p>
+            <span>Explore →</span>
+        </a>
+
+        <a href="#geography" class="category-card geography">
+            <div class="category-icon">🌍</div>
+            <h3>Geography</h3>
+            <p>Understand our world</p>
+            <span>Explore →</span>
+        </a>
+
+        <a href="#technology" id="technology" class="category-card technology">
+            <div class="category-icon">💻</div>
+            <h3>Technology</h3>
+            <p>Build the future</p>
+            <span>Explore →</span>
+        </a>
+
+        <a href="#languages" class="category-card languages">
+            <div class="category-icon">🌐</div>
+            <h3>Languages</h3>
+            <p>Improve communication</p>
+            <span>Explore →</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Featured Courses -->
+
+<section class="courses" id="education">
+
+<div class="section-heading">
+    <h2>Featured Courses</h2>
+    <p>Choose your exam and start your learning journey.</p>
+</div>
+
+<div class="course-container">
+
+
+    <div class="course-card" id="jee">
+        <div class="course-icon">🎯</div>
+        <span class="course-level">ENGINEERING EXAM</span>
+        <h3>JEE Preparation</h3>
+        <p>Physics, Chemistry and Mathematics preparation.</p>
+        <a href="#jee">Explore Course →</a>
+    </div>
+
+    <div class="course-card" id="nda">
+        <div class="course-icon">🛡️</div>
+        <span class="course-level">DEFENCE EXAM</span>
+        <h3>NDA Preparation</h3>
+        <p>Prepare for Army, Navy and Air Force through NDA.</p>
+        <a href="#nda">Explore Course →</a>
+    </div>
+
+   <div class="course-card" id="ssc-cgl">
+        <div class="course-icon">📚</div>
+        <span class="course-level">GOVERNMENT EXAM</span>
+        <h3>SSC CGL</h3>
+        <p>Quantitative Aptitude, Reasoning, English and General Awareness.</p>
+        <a href="#ssc-cgl">Explore Course →</a>
+    </div>
+
+    <div class="course-card" id="airforce">
+        <div class="course-icon">✈️</div>
+        <span class="course-level">INDIAN AIR FORCE</span>
+        <h3>Air Force</h3>
+        <p>Explore Agniveervayu and other eligible entry pathways.</p>
+        <a href="#airforce">Explore Course →</a>
+    </div>
+
+    <div class="course-card" id="army">
+        <div class="course-icon">🎖️</div>
+        <span class="course-level">INDIAN ARMY</span>
+        <h3>Army Preparation</h3>
+        <p>Learn about Army recruitment exams and preparation.</p>
+        <a href="#army">Explore Course →</a>
+    </div>
+
+    <div class="course-card" id="navy">
+        <div class="course-icon">⚓</div>
+        <span class="course-level">INDIAN NAVY</span>
+        <h3>Navy Preparation</h3>
+        <p>Explore Navy recruitment and examination preparation.</p>
+        <a href="#navy">Explore Course →</a>
+    </div>
+
+    <div class="course-card" id="english">
+        <div class="course-icon">🌍</div>
+        <span class="course-level">LANGUAGE</span>
+        <h3>English Learning</h3>
+        <p>Improve vocabulary, grammar and communication.</p>
+        <a href="#english">Explore Course →</a>
+    </div>
+
+    <div class="course-card" id="science">
+        <div class="course-icon">🔬</div>
+        <span class="course-level">ACADEMIC</span>
+        <h3>Science Learning</h3>
+        <p>Explore Physics, Chemistry, Biology and more.</p>
+        <a href="#science">Explore Course →</a>
+
+    </div>
+<div class="course-card" id="gat">
+    <div class="course-icon">🧠</div>
+    <span class="course-level">GENERAL ABILITY TEST</span>
+    <h3>GAT Learning</h3>
+    <p>Improve English, General Knowledge, Reasoning and General Science.</p>
+        <a href="#gat">Explore Course →</a>
+</div>
+
+</div>
+</div>
+</section>
+
+
+
+
+
+
+<!-- POPULAR RESOURCES SECTION -->
+
+<section class="resources" id="resources">
+
+    <div class="section-heading">
+        <h2>Popular Resources</h2>
+        <p>Everything you need to learn, practice and succeed.</p>
+    </div>
+
+    <div class="resource-container">
+
+        <div class="resource-card">
+            <div class="resource-icon">📒</div>
+            <h3>Study Notes</h3>
+            <p>Easy-to-understand notes for all important subjects.</p>
+            <a href="notes.HTML">Explore Notes →</a>
+        </div>
+
+        <div class="resource-card">
+            <div class="resource-icon">📄</div>
+            <h3>Previous Year Q&A</h3>
+            <p>Practice questions from previous examinations.</p>
+            <a href="#pyq">Explore PYQs →</a>
+        </div>
+
+        <div class="resource-card">
+            <div class="resource-icon">📝</div>
+            <h3>Mock Tests</h3>
+            <p>Test your preparation with exam-style mock tests.</p>
+            <a href="#mock-tests">Start Practice →</a>
+        </div>
+
+        <div class="resource-card">
+            <div class="resource-icon">⚡</div>
+            <h3>Daily Quiz</h3>
+            <p>Improve your knowledge with daily questions.</p>
+            <a href="#quiz">Play Quiz →</a>
+        </div>
+
+        <div class="resource-card">
+            <div class="resource-icon">🌐</div>
+            <h3>Current Affairs</h3>
+            <p>Stay updated with important national and global events.</p>
+            <a href="#current-affairs">Read More →</a>
+        </div>
+
+        <div class="resource-card">
+            <div class="resource-icon">📅</div>
+            <h3>Study Planner</h3>
+            <p>Organize your study routine and learning goals.</p>
+          <a href="jee-planner.html">Create Plan →</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- QUIZ & PRACTICE ZONE -->
+
+<section class="quiz-zone" id="practice">
+
+    <div class="section-heading">
+        <h2>Quiz & Practice Zone</h2>
+        <p>Test your knowledge and improve your preparation.</p>
+    </div>
+
+    <div class="quiz-container">
+
+        <div class="quiz-card">
+            <div class="quiz-icon">🧠</div>
+            <span class="quiz-tag">GENERAL KNOWLEDGE</span>
+            <h3>Daily GK Quiz</h3>
+            <p>Improve your general knowledge with interesting questions.</p>
+            <a href="#gk-quiz">Start Quiz →</a>
+        </div>
+
+        <div class="quiz-card">
+            <div class="quiz-icon">🔢</div>
+            <span class="quiz-tag">MATHEMATICS</span>
+            <h3>Maths Practice</h3>
+            <p>Practice calculations, formulas and mathematical problems.</p>
+            <a href="#maths-quiz">Practice Now →</a>
+        </div>
+
+        <div class="quiz-card">
+            <div class="quiz-icon">📖</div>
+            <span class="quiz-tag">ENGLISH</span>
+            <h3>English Quiz</h3>
+            <p>Test your vocabulary, grammar and comprehension skills.</p>
+            <a href="#english-quiz">Start Quiz →</a>
+        </div>
+
+        <div class="quiz-card">
+            <div class="quiz-icon">🎯</div>
+            <span class="quiz-tag">JEE PREPARATION</span>
+            <h3>JEE Practice</h3>
+            <p>Practice Physics, Chemistry and Mathematics questions.</p>
+            <a href="#jee-practice">Practice Now →</a>
+        </div>
+
+        <div class="quiz-card">
+            <div class="quiz-icon">🛡️</div>
+            <span class="quiz-tag">DEFENCE EXAMS</span>
+            <h3>NDA Practice</h3>
+            <p>Prepare with Mathematics and General Ability questions.</p>
+            <a href="#nda-practice">Practice Now →</a>
+        </div>
+
+        <div class="quiz-card">
+            <div class="quiz-icon">🏆</div>
+            <span class="quiz-tag">SSC CGL</span>
+            <h3>SSC CGL Practice</h3>
+            <p>Practice reasoning, maths, English and general awareness.</p>
+            <a href="#ssc-practice">Practice Now →</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<!-- ABOUT US SECTION -->
+
+<section class="about-section" id="about">
+
+    <div class="section-heading">
+        <h2>About NEXVIAN</h2>
+        <p>Learn today. Lead tomorrow.</p>
+    </div>
+
+    <div class="about-content">
+
+        <div class="about-text">
+            <span class="about-tag">WHO WE ARE</span>
+
+            <h3>Education Without Limits.</h3>
+
+            <p>
+                NEXVIAN is a learning platform designed to make
+                education simple, accessible and interesting for everyone.
+            </p>
+
+            <p>
+                From school subjects and competitive examinations
+                to technology, English and general knowledge,
+                our goal is to help learners explore new possibilities.
+            </p>
+
+            <a href="#categories" class="about-btn">
+                Explore Learning →
+            </a>
+        </div>
+
+        <div class="about-visual">
+            <div class="about-symbol">N</div>
+            <h3>LEARN • EXPLORE • GROW</h3>
+            <p>Your journey towards knowledge starts here.</p>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>
+
+<!-- CONTACT US SECTION -->
+
+<section class="contact-section" id="contact">
+
+    <div class="section-heading">
+        <span class="section-tag">GET IN TOUCH</span>
+        <h2>Contact <span>Us</span></h2>
+        <p>Have a question or suggestion? We'd love to hear from you.</p>
+    </div>
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+            <h3>Let's Connect!</h3>
+
+            <p>
+                Have questions about learning, courses or resources?
+                Contact the NEXVIAN team.
+            </p>
+
+            <div class="contact-item">
+                <span>📧</span>
+                <div>
+                    <h4>Email</h4>
+                    <p>sujal.pandeyy15@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <span>🌐</span>
+                <div>
+                    <h4>Website</h4>
+                    <p>www.nexvian.edu.com</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <span>💬</span>
+                <div>
+                    <h4>Support</h4>
+                    <p>We're here to help you.</p>
+                </div>
+            </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+
+            <h3>Send Us a Message</h3>
+
+            <input type="text"
+                   placeholder="Your Name"
+                   required>
+
+            <input type="email"
+                   placeholder="Your Email"
+                   required>
+
+            <input type="text"
+                   placeholder="Subject"
+                   required>
+
+            <textarea
+                placeholder="Write your message..."
+                rows="2"
+                required></textarea>
+
+            <button type="submit">
+                Send Message →
+            </button>
+
+            <p id="contactMessage"></p>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- FOOTER SECTION -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+            <h2>NEX<span>VIAN</span></h2>
+            <p>LEARN • EXPLORE • GROW</p>
+
+            <p>
+                Explore knowledge, develop skills
+                and build a better future with NEXVIAN.
+            </p>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#education">Courses</a>
+            <a href="#resources">Resources</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <!-- LEARNING -->
+        <div class="footer-links">
+            <h3>Learning</h3>
+            <a href="#jee">JEE Preparation</a>
+            <a href="#nda">NDA Preparation</a>
+            <a href="#practice">Practice Zone</a>
+            <a href="#ssc-cgl">SSC CGL</a>
+            <a href="#english">English Learning</a>
+            <a href="#gat">GAT Learning</a>
+        
+        </div>
+
+
+<!-- CONNECT -->
+<div class="footer-links">
+    <h3>Connect With Us</h3>
+
+    <a href="#contact">Contact Us</a>
+    <a href="#contact">Send Feedback</a>
+    <a href="#contact">Support</a>
+
+    <a href="https://www.instagram.com/born.2.servee/" target="_blank" rel="noopener noreferrer">
+         Instagram
+    </a>
+
+    <a href="https://www.twitter.com/Sujal_pandey15/" target="_blank" rel="noopener noreferrer">
+         X
+    </a>
+</div>
+</div> <!-- footer-container close -->
+
+<div class="footer-bottom">
+    <p>© 2026 NEXVIAN. All Rights Reserved.</p>
+    <p>
+        Made for Learners. Built for the Future.
+        And built by Sujal pandey
+    </p>
+    
+</div>
+
+</footer>
